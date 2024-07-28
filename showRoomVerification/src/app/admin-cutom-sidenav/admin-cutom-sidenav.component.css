@@ -1,0 +1,253 @@
+ @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+ 
+ 
+ 
+.html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+ 
+}
+ 
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'El Messiri', sans-serif;
+}
+ 
+.sidebar {
+  width: 6rem;
+  height: 100%;
+  background-color: #24788F;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+ 
+.menu-icon {
+ 
+  cursor: pointer;    
+}
+ 
+.line {
+width: 2.5rem;
+height: .2rem;
+background-color: #fff;
+margin-bottom: .6rem;
+transition: width .3s;
+}
+ 
+.line-1, .line-3 {
+width: 1.8rem;
+transition: transform 0.3s;
+}
+ 
+.menu-icon:hover .line {
+width: 2.5rem;
+background-color: #000;
+}
+ 
+#drawer:checked ~ .sidebar .line-1 {
+transform: translate(0, .4rem) rotate(-45deg);
+}
+ 
+#drawer:checked ~ .sidebar .line-2 {
+display: none;
+}
+ 
+#drawer:checked ~ .sidebar .line-3 {
+transform: translate(0, -0.4rem) rotate(45deg);
+}
+ 
+.icon-list {
+  height: 40%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ 
+.link {
+  font-size: 2rem;
+  color: #fff;
+  transition: color .3s;
+}
+ 
+.link:hover {
+  color: #000;
+}
+ 
+.year {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: color .8s;
+}
+ 
+#drawer:checked ~ .sidebar .year {
+  color: transparent;
+}
+/* sidenav */
+ 
+/* navigation */
+ 
+.navigation {
+ 
+  height: 100%;
+  position: fixed;
+  display: flex;
+  left: -14rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: left 0.8s;
+  z-index: 5;
+}
+ 
+#drawer:checked ~ .navigation {
+  left: 6rem;
+}
+ 
+.para{
+  color: #24788F;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+ 
+ 
+.navigation-headline {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: .2rem;  
+  color: #24788F;
+  font-family: 'El Messiri', sans-serif;
+}
+ 
+.navigation-search {
+  position: relative;
+  text-align: center;
+  padding-top: 10%;
+}
+ 
+.navigation-search-input {
+  width: 92%;
+  height: 2.5rem;
+  border-radius: 10rem;
+  padding-left: 1rem;
+  background-color: #111;
+  border: 1px solid #555;
+  font-size: .8rem;
+  color: #fff;
+  letter-spacing: .05rem;
+  transition: background-color .3s;
+}
+ 
+.navigation-search-input:focus {
+  background-color: #222;
+  outline: 1px solid #24788F;
+}
+ 
+ 
+.navigation-search-btn {
+  position: absolute;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  right: .5rem;
+  padding: 10px 20px 0px 0px;
+}
+ 
+.navigation-search-input:focus + .navigation-search-btn {
+  color: #24788F;
+}
+ 
+ 
+/* navigation items */
+.navigation-item-list {
+  list-style: none;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ 
+.navigation-item {  
+   position: relative;
+   font-family: 'El Messiri', sans-serif;
+}
+ 
+.navigation-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color .5s;
+  padding-top: 10px;
+ 
+}
+ 
+.navigation-item::before {
+  content: "";
+  width: 0rem;
+  height: .1rem;
+  background-color: #fff;
+  position: absolute;
+  top: .8rem;
+  left: -3rem;
+  transition: width .5s;
+}
+ 
+.navigation-item::after {
+  content: "";
+  width: 0rem;
+  height: .1rem;
+  background-color: #fff;
+  position: absolute;
+  top: .8rem;
+  right: -3rem;
+  transition: width .5s;
+}
+ 
+.navigation-item:hover::before {
+  width: 2rem;
+}
+ 
+.navigation-item:hover::after {
+  width: 2rem;
+}
+ 
+.navigation-link:hover {
+  color: #fff;
+ 
+}
+ 
+.icon{
+  padding-top: 3%;
+}
+ 
+.menu-header {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  transition: opacity 0.3s;
+  opacity: 0.5;
+  color: #fff;
+  position: relative;
+  text-align: right;
+ 
+}
+ 
+.logout {
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'El Messiri', sans-serif;
+}

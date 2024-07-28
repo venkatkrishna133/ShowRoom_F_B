@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sign in & Sign up Form</title>
+  </head>
+
+  <body ng-controller="myController">
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <!-- Login form -->
+          <form
+            [formGroup]="signInForm"
+            (ngSubmit)="onSignInSubmit()"
+            class="sign-in-form"
+          >
+            <h2 class="title">Sign in</h2>
+
+            <!-- Email -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Email</mat-label>
+                <mat-icon matSuffix>email</mat-icon>
+                <input matInput formControlName="email" class="input-field" />
+                <mat-error
+                  *ngIf="
+                    signInForm.get('email')?.hasError('required') &&
+                    signInForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Email is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signInForm.get('email')?.hasError('pattern') &&
+                    signInForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid email address
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+
+            <!-- Password -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  formControlName="password"
+                  [type]="hide ? 'password' : 'text'"
+                  class="input-field"
+                />
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+                <mat-error
+                  *ngIf="
+                    signInForm.get('password')?.hasError('required') &&
+                    signInForm.get('password')?.touched
+                  "
+                  class="error-message"
+                >
+                  Password is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signInForm.get('password')?.hasError('minlength') &&
+                    signInForm.get('password')?.touched
+                  "
+                  class="error-message"
+                >
+                  Password must be at least 8 characters long
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signInForm.get('password')?.hasError('maxlength') &&
+                    signInForm.get('password')?.touched
+                  "
+                  class="error-message"
+                >
+                  Password can't be more than 16 characters long
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+            <div id="forget" class="form-inline fr">
+              <a
+                id="forgot"
+                class="forgot"
+                (click)="navigateToForgetPasswordPage()"
+                >Forget Password?</a
+              >
+            </div>
+
+            <button type="submit" class="btn" mat-raised-button color="primary">
+              Login
+            </button>
+            <h1><span class="social-text">Or connect</span></h1>
+
+            <div class="social-media">
+               <div
+                id="g_id_onload"
+                data-client_id="524267340045-hkg8e23dqk1od73bsnkhrj1qgv0lq20g.apps.googleusercontent.com"
+                data-context="signin"
+                data-ux_mode="popup"
+                data-login_uri="https://redirectmeto.com/http://localhost:4200/dashboard"
+                data-itp_support="true"
+              ></div>
+
+              <div
+                class="g_id_signin"
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="outline"
+                data-text="signin_with"
+                data-size="medium"
+                data-logo_alignment="left"
+              ></div>
+            </div>
+          </form>
+
+          <!-- Sign up form -->
+          <form
+            [formGroup]="signUpForm"
+            (ngSubmit)="onSignUpSubmit()"
+            class="sign-up-form"
+          >
+            <h2 class="title">Sign up</h2>
+
+            <!-- Username -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Username</mat-label>
+                <mat-icon matSuffix>account_circle</mat-icon>
+
+                <input
+                  matInput
+                  formControlName="username"
+                  class="input-field"
+                />
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('username')?.hasError('required') &&
+                    signUpForm.get('username')?.touched
+                  "
+                  class="error-message"
+                >
+                  Username is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('username')?.hasError('pattern') &&
+                    signUpForm.get('username')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid alphanumeric username
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('username')?.hasError('minlength') &&
+                    signUpForm.get('username')?.touched
+                  "
+                  class="error-message"
+                >
+                  Username must be at least 3 characters long
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('username')?.hasError('maxlength') &&
+                    signUpForm.get('username')?.touched
+                  "
+                  class="error-message"
+                >
+                  Username can't be more than 20 characters long
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+
+            <!-- Email -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Email</mat-label>
+                <mat-icon matSuffix>email</mat-icon>
+                <input matInput formControlName="email" class="input-field" />
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('email')?.hasError('required') &&
+                    signUpForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Email is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('email')?.hasError('pattern') &&
+                    signUpForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid email address
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+
+            <!-- Password -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  formControlName="password"
+                  [type]="hide ? 'password' : 'text'"
+                  class="input-field"
+                />
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+                <!-- Mat error messages -->
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('password')?.hasError('required') &&
+                    signUpForm.get('password')?.touched
+                  "
+                  class="error-message"
+                >
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+
+            <!-- Confirm Password -->
+            <fieldset class="custom-fieldset">
+              <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Confirm Password</mat-label>
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+                <input
+                  matInput
+                  formControlName="confirmpassword"
+                  class="input-field"
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('confirmpassword')?.hasError('required') &&
+                    signUpForm.get('confirmpassword')?.touched
+                  "
+                  class="error-message"
+                >
+                  Confirm Password is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    signUpForm.get('confirmpassword')?.hasError('mustMatch') &&
+                    signUpForm.get('confirmpassword')?.touched
+                  "
+                  class="error-message"
+                >
+                  Passwords must match
+                </mat-error>
+              </mat-form-field>
+            </fieldset>
+
+            <button type="submit" class="btn" mat-raised-button color="primary">
+              Sign Up
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New to our community ?</h3>
+            <p>
+              Welcome to our Car Showroom Documentation Verification System!
+              We're delighted to have you join us. Let's get started on
+              verifying your documentation to ensure a smooth and enjoyable
+              experience.
+            </p>
+            <button
+              class="btn btn-outline-primary transparent"
+              id="sign-up-btn"
+              (click)="toggleMode()"
+              style="font-size: 19px"
+            >
+              Sign up
+            </button>
+          </div>
+          <img src="../assets/images/car2.png" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of Our Valued Members</h3>
+            <p>
+              Thank you for being part of our community. Your presence enriches
+              our shared experiences. Let's continue this journey together!
+            </p>
+            <button
+              class="btn btn-outline-primary transparent"
+              id="sign-in-btn"
+              (click)="toggleMode()"
+              style="font-size: 19px"
+            >
+              Sign in
+            </button>
+          </div>
+          <img src="../assets/images/c4.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

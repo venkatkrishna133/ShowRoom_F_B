@@ -1,0 +1,42 @@
+<!-- upload-file.component.html -->
+ 
+ <app-custom-sidenav></app-custom-sidenav>
+
+ 
+<h2>Document Verification</h2>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  crossorigin="anonymous"
+/>
+
+<div class="img-container">
+    <img src="pay.png">
+</div>
+
+<input
+  type="file"
+  (change)="onFileSelected($event)"
+  style="display: none"
+  #fileInput
+/>
+
+<div class="btn">
+
+<button (click)="fileInput.click()" class="choose-file">Select File</button>
+<div id="selectedFileName">{{ selectedFile?.name || "No file selected" }}</div>
+ 
+<button (click)="uploadFile()" class="upload-files">
+  Upload File
+     <i class="fa fa-upload"></i></button
+><br /><br />
+<div id="error-message"></div>
+ 
+
+<!-- <iframe [src]="documentPath"></iframe> -->
+<button (click)="paynow()" class="pay-b" [disabled]="payButtonDisabled">
+  Pay  <i class="fa fa-credit-card"></i>
+</button>
+
+</div>

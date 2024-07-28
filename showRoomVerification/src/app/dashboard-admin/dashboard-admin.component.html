@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <app-admin-cutom-sidenav></app-admin-cutom-sidenav>
+   <div class="admin-dashboard">
+        <div class="header">
+            <h1>Admin dashboard</h1>
+            <div class="car"><img src="..\assets\img\image14.png"></div>
+        </div>
+        <div class ="circle">
+            <img src="./assets/images/logo.png" (click)="onUpload()"
+            (click)="onSubmit()">
+            
+        </div>
+       
+   
+       
+        <div class="bg-img">
+   <img src="./assets/images/bg.png" alt="Image">
+</div>
+   
+        <div class="bg-color">
+        <div class="user-button">
+            <button type="button" class="btn" (click)= "onUser()">Total User Details </button>
+        </div>
+       
+       
+        <div class="grid-button" >
+            <div class="grid-btn" >
+              <button type="button" [routerLink]="['/approvedAdmin']" class="button" >Approval Documents</button>
+            </div>
+            <div class="grid-btn">
+                <button type="button" [routerLink]="['/pendingAdmin']" class="button" >Pending Documents</button>
+            </div>
+            <div class="grid-btn">
+                <button type="button" [routerLink]="['/rejectedAdmin']" class="button">Rejected Documents</button>
+            </div>
+           
+        </div>
+       
+       
+        <!--<app-profile-page [profileImageUrl]="profileImageUrl"></app-profile-page>-->
+    </div>
+</div>
+</body>
+</html>

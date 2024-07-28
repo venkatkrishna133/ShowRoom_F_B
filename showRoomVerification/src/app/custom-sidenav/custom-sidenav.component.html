@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Vanchusen/CSS@main/custom.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <!-- drawer effect -->
+<input type="checkbox" id="drawer" hidden>
+ 
+<!-- sidebar -->
+<div class="sidebar">
+  <label for="drawer">
+  <div class="menu-icon mt-4" (click)="setName()">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
+  </div>
+    </label>
+  <ul class="icon-list">
+    <li><a [routerLink]="['/dashboard']"  class="link">
+      <mat-icon >dashboard</mat-icon>
+    </a></li>
+        <li><a [routerLink]="['/applicationTracking']" class="link">
+     <mat-icon >track_changes</mat-icon>
+    </a></li>
+        <li><a [routerLink]="['/uploadUser']" class="link">
+     <mat-icon >storefront</mat-icon>
+    </a></li>
+        <li><a (click)="logout()" class="link">
+      <mat-icon>exit_to_app</mat-icon>
+    </a></li>
+  </ul>
+  <div class="year">2024</div>
+ 
+</div>
+<!-- end of sidebar -->
+<!-- navigation -->
+<nav class="navigation bg-dark p-0 w-25">
+  <div class="navigation-header mt-5">
+    <div class="navigation-headline mb-0">
+        <a [routerLink]="['/appProfilePage']">
+            <img class="img" [src]="'../assets/profileImages/' + profileImageName">
+            <p class="para"> Hello, {{ username }}</p>
+        </a>
+        </div>
+      </div>
+  <ul class="navigation-item-list mt-0 p-0">
+    <div class="menu-header">
+      <span><mat-icon class="icon">dashboard</mat-icon> DASHBOARD </span>
+    </div>
+   
+    <li class="navigation-item ">
+      <a [routerLink]="['/dashboard']" class="navigation-link"> User Dashboard</a>
+     </li>
+     <div class="menu-header">
+      <span><mat-icon class="icon">track_changes</mat-icon> TRACKING </span>
+    </div>
+     <li class="navigation-item">
+      <a [routerLink]="['/applicationTracking']" class="navigation-link"> Application Tracking</a>
+     </li>
+     <div class="menu-header">
+      <span><mat-icon class="icon">storefront</mat-icon> SHOWROOM </span>
+    </div>
+        <li class="navigation-item">
+      <a [routerLink]="['/uploadUser']" class="navigation-link">Apply For Showroom</a>
+     </li>
+       
+   
+  </ul>
+ <div class="logout mb-5">
+   <a >
+    <span (click)="logout()">
+    <mat-icon class="log-icon pt-1">exit_to_app</mat-icon> Logout
+   </span>
+   </a>
+ </div>
+ 
+</nav>
+    
+</body>
+</html>

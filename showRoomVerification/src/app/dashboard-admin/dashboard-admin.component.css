@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+ 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'El Messiri', sans-serif;
+}
+ 
+.body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-image: linear-gradient(to bottom right  , rgb(48, 48, 57), rgb(182, 182, 238));
+}
+ 
+.header{
+    display: flex;
+    position: fixed;
+    margin: 15px 0px 0px 43%;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+}
+ 
+.circle {
+    border-radius: 100% !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    top: 30px;
+    position: relative;
+    left: 85%;
+  }
+   
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+ 
+  .btn {
+    width: 150px;
+    border: none;
+    outline: none;
+    height: 59px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 650;
+    position: relative;
+    top: 50px;
+    left: 44%;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color:  #111415;
+  }
+ 
+  .btn:hover {
+    background-color: #5f6771 ;
+  }
+ 
+  .grid-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10em;
+    margin-top: 10px;
+    background-image: rgb(43,23,67);
+   
+  }
+ 
+ 
+  .grid.-btn {
+    display: flex;
+    justify-content: center;
+ 
+  }
+ 
+  .grid-btn .button{
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 1em;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    top: 100px;
+    position: relative;
+    background-color:  #24788F;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #2c3034;
+  }
+ 
+  .bg-img {
+    /* The image used */
+   
+ 
+    min-height: 380px;
+ 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(to bottom right, rgb(48, 48, 57), rgb(182, 182, 238));
+  }
+  .admin-dashboard {
+    min-height: auto;
+    background-image: linear-gradient(to bottom right, rgb(48, 48, 57), rgb(182, 182, 238));
+  }
+  .bg-color {
+    min-height: 250px;
+    background-image: linear-gradient(to bottom right, rgb(48, 48, 57), rgb(182, 182, 238));
+  }
+  .car{
+   
+    border-radius: 50% ;
+    overflow:hidden;
+    width: 138px;
+    height: 128px;
+    top:60%;
+   
+    position: relative;
+    right: 190%;
+   
+ 
+  }
+  .car img {
+    border-radius: 50%;
+    max-width: 85%;
+    height: 90%;
+    animation: turnAnimation 8s ease-in-out infinite;
+}
+@keyframes turnAnimation {
+  0% {
+      transform: rotateY(0deg); /* Start facing front */
+  }
+  25% {
+      transform: rotateY(-90deg); /* Turn left */
+  }
+  50% {
+      transform: rotateY(-180deg); /* Turn back */
+  }
+  75% {
+      transform: rotateY(-270deg); /* Turn right */
+  }
+  100% {
+      transform: rotateY(0deg); /* Return to front */
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Vanchusen/CSS@main/custom.css">
+  <title>Document</title>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between;">
+      <app-custom-sidenav>
+  </app-custom-sidenav>
+
+  <div class="head-image">
+    <img class="logo-img"  src="..\assets\img\image14.png"><br>
+  </div>
+
+  <div class="header">
+    <h1 >User dashboard</h1>
+  </div>  
+  
+  <div class="carousel-dashboard">
+      <app-carousel-user [images]="images"></app-carousel-user>
+  </div>
+
+  </div>
+<app-scrolling></app-scrolling>
+  
+  
+</body>
+</html>

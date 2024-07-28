@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div >
+      <app-custom-sidenav></app-custom-sidenav>
+      <div class="header">
+    <h1>User dashboard {{username}}</h1>
+  </div>
+    <div class="row" >
+  <div class="small-12 medium-2 large-2 columns " id="down">
+    <div class="circle">
+      <img class="profile_pic" [src]="profilePicSrc" alt="Profile Picture">
+    </div>
+    <div class="p-image">
+      <label for="file-upload">
+        <i class="fa fa-camera upload-button"></i>
+      </label>
+      <input id="file-upload" class="file-upload" type="file" accept="image/*" (change)="onFileSelected($event)">
+      
+    </div>
+    
+  </div>
+</div>
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <div class="main-content">
+    <div class="desc-grid">
+        
+      <label class="grid-input">
+  <input type="text" id="username" name="username" class="title descInput" placeholder="Username" [(ngModel)]="username">
+</label>
+<label class="grid-input">
+  <input type="text" id="email" name="email" class="title descInput" placeholder="Email" [(ngModel)]="email">
+</label>
+<label class="grid-input">
+  <input type="text" id="phoneNumber" name="phoneNumber" class="title descInput" placeholder="Phone Number" [(ngModel)]="phoneNumber">
+</label>
+<label class="grid-input">
+  <input type="text" id="password" name="password" [type]="hidePassword ? 'password' : 'text'" class="title descInput" placeholder="Password" [(ngModel)]="password">
+  <mat-icon matSuffix id="eye" (click)="togglePasswordVisibility('password')">{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+</label>
+    </div>
+
+    <div class="btn-container">
+      <button class="submit-btn btn" (click)="clickbtn()">Change Password</button>
+    </div>
+
+    <form [formGroup]="changePwdForm" (ngSubmit)="onChangePwd()">
+    <div class="desc-grid1" *ngIf="showpassword">
+        <label class="grid-input">
+            <input type="text" id="oldPassword" name="oldPassword" class="sub_title descInput" placeholder="Old Password" formControlName="oldPassword">
+        </label>
+        <label class="grid-input">
+            <input type="text" id="password" name="password" class="sub_title descInput" placeholder="New Password" formControlName="password">
+        </label>
+        <label class="grid-input">
+            <input type="text" id="confirmPassword" name="confirmPassword" class="sub_title descInput" placeholder="Confirm Password" formControlName="confirmPassword">
+        </label>
+        <input type="hidden" formControlName="email" name="email" [(ngModel)]="email">
+
+    </div>
+    <div class="btn-container">
+        <button class="submit-btn btn" type="submit">Save</button>
+    </div>
+</form>
+
+
+
+    <div class="msg-log"></div>
+  </div>
+</form>
+    </div>
+
+    
+    
+  </body>
+</html>

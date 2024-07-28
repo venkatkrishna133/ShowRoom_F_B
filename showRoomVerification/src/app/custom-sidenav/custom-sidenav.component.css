@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+ 
+ 
+.html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'El Messiri', sans-serif;
+ 
+}
+
+a{
+    text-decoration: none;
+}
+ 
+.sidebar {
+  width: 6rem;
+  height: 100%;
+  background-color: #24788F;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+ 
+.menu-icon {
+  cursor: pointer;    
+ 
+}
+ 
+.line {
+width: 2.5rem;
+height: .2rem;
+background-color: #222;
+margin-bottom: .6rem;
+transition: width .3s;
+ background-color: #fff;
+}
+
+ 
+.line-1, .line-3 {
+width: 1.8rem;
+transition: transform 0.3s;
+}
+ 
+.menu-icon:hover .line {
+width: 2.5rem;
+background-color: #000;
+}
+ 
+#drawer:checked ~ .sidebar .line-1 {
+transform: translate(0, .4rem) rotate(-45deg);
+}
+ 
+#drawer:checked ~ .sidebar .line-2 {
+display: none;
+}
+ 
+#drawer:checked ~ .sidebar .line-3 {
+transform: translate(0, -0.4rem) rotate(45deg);
+}
+ 
+.icon-list {
+  height: 40%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ 
+.link {
+  font-size: 2rem;
+  color: #fff;
+  transition: color .3s;
+}
+ 
+.link:hover {
+  color: #000;
+}
+ 
+.year {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: color .8s;
+}
+ 
+#drawer:checked ~ .sidebar .year {
+  color: transparent;
+}
+/* sidenav */
+ 
+/* navigation */
+ 
+.navigation {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  left: -14rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: left 0.8s;
+ z-index: 5;
+}
+ 
+#drawer:checked ~ .navigation {
+  left: 6rem;
+  
+}
+ 
+.para{
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.navigation-headline {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: .2rem;  
+  color: #24788F;
+  font-family: 'El Messiri', sans-serif;
+}
+
+ 
+@keyframes spin {
+  0% {
+    transform: rotate3d(0deg);
+  }
+ 
+  100% {
+   transform: rotateY(180deg);
+  }
+}
+
+.navigation-headline .img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  transform-style: preserve-3d;
+}
+ 
+/* navigation items */
+.navigation-item-list {
+  list-style: none;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ 
+.navigation-item {  
+   position: relative;
+   font-family: 'El Messiri', sans-serif;
+}
+ 
+.navigation-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color .5s;
+  padding-top: 10px;
+ 
+}
+ 
+.navigation-item::before {
+  content: "";
+  width: 0rem;
+  height: .1rem;
+  background-color: #fff;
+  position: absolute;
+  top: .8rem;
+  left: -3rem;
+  transition: width .5s;
+}
+ 
+.navigation-item::after {
+  content: "";
+  width: 0rem;
+  height: .1rem;
+  background-color: #fff;
+  position: absolute;
+  top: .8rem;
+  right: -3rem;
+  transition: width .5s;
+}
+ 
+.navigation-item:hover::before {
+  width: 2rem;
+}
+ 
+.navigation-item:hover::after {
+  width: 2rem;
+}
+ 
+.navigation-link:hover {
+  color: #24788F;
+ 
+}
+ 
+.icon{
+  padding-top: 3%;
+}
+ 
+.menu-header {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  transition: opacity 0.3s;
+  opacity: 0.5;
+  color: #fff;
+  position: relative;
+  text-align: right;
+ 
+}
+ 
+.logout {
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'El Messiri', sans-serif;
+}
+ 

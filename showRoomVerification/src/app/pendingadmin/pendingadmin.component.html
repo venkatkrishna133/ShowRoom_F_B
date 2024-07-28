@@ -1,0 +1,74 @@
+<app-admin-cutom-sidenav></app-admin-cutom-sidenav>
+<div class="navigation-search">
+    <input type="text" [(ngModel)]="searchTerm" (input)="search()" class="navigation-search-input" placeholder="Search Something...">
+    <button class="navigation-search-btn">
+        <i class="fa fa-search" ></i>
+    </button>
+</div>
+ 
+ 
+<div class="projects mb-4">
+  <div class="projects-inner">
+    <header class="projects-header">
+      <div class="title">Ongoing</div>
+      <div class="count"> | {{ filteredItems.length }} Projects</div>
+      <i class="fa fa-download" aria-hidden="true"></i>
+    </header>
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>User Id + Doc Id</th>
+          <th>Date</th>
+          <th>Username</th>
+          <th>Payment Status</th>
+          <th>Document Status</th>
+          <th class="text-right">Select Status</th>
+          <th class="text-right">Actions</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of userFileDataList | filter: searchTerm">
+          <td>
+            <p>{{ item.userId }}</p>
+            <p>{{ item.docId }}</p>
+          </td>
+          <td>
+            <p>{{ item.date }}</p>
+            <p class="text-success">Submitted</p>
+          </td>
+          <td class="member">
+             <figure><img class="img" [src]="'../assets/profileImages/' + item.filePath" /></figure>
+            <div class="member-info">
+              <p>{{ item.username }}</p>
+              <p>User</p>
+            </div>
+          </td>
+          <td>
+            
+            <p class="text-success">Paid</p>
+          </td>
+         
+          <td class="status">
+            <span class="status-text" [ngClass]="getStatusClass(item.status)">{{ item.status }}</span>
+          </td>
+         
+          <td>
+            <form [formGroup]="docStatusForm">
+                <select formControlName="status" class="action-box"> <!-- Use formControlName to bind to the FormGroup control -->
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approve</option>
+                    <option value="Rejected">Reject</option>
+                </select>
+            </form>
+          </td>
+ 
+          <td class="btn">
+            <button  (click)="changeDocStatus(item.userId,item.docId)" type="button">Done</button>
+          </td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

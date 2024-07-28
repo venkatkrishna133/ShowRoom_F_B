@@ -1,0 +1,90 @@
+<!-- drawer effect -->
+<input type="checkbox" id="drawer" hidden>
+ 
+<!-- sidebar -->
+<!--  -->
+ 
+<div class="sidebar">
+  <label for="drawer">
+  <div class="menu-icon mt-4">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
+  </div>
+    </label>
+  <ul class="icon-list">
+    <li><a [routerLink]="['/dashboardAdmin']"  class="link">
+      <mat-icon >dashboard</mat-icon>
+    </a></li>
+    <li [routerLink]="['/approvedAdmin']"><a class="link">
+      <i class="fa fa-file-pdf-o" ></i>
+    </a></li>
+        <li [routerLink]="['/pendingAdmin']"><a  class="link">
+      <i class="fa fa-hourglass-half" ></i>
+    </a></li>
+        <li [routerLink]="['/rejectedAdmin']"><a  class="link">
+          <i class="fa fa-times" ></i>
+    </a></li>
+        <li ><a (click)="logout()" class="link">
+          <i class="fa fa-sign-out" ></i>
+    </a></li>
+  </ul>
+  <div class="year">2024</div>
+ 
+</div>
+<!-- end of sidebar -->
+<!-- navigation -->
+<nav class="navigation bg-dark p-0 w-25">
+  <div class="navigation-header mt-5">
+    <div class="navigation-headline mb-0">
+      <p class="para"> Application Tracking </p>
+    </div>
+    <div class="navigation-search">
+      <input type="text" placeholder="search..." class="navigation-search-input">
+      <button class="navigation-search-btn">
+        <i class="fa fa-search" ></i>
+      </button>
+    </div>
+<!-- -------------------------------->
+   
+   <!-------------------------------->
+  </div>
+  <ul class="navigation-item-list mt-0 p-0">
+     <div class="menu-header">
+      <span><mat-icon class="icon">dashboard</mat-icon> DASHBOARD </span>
+    </div>
+   
+    <li class="navigation-item ">
+      <a [routerLink]="['/dashboardAdmin']" class="navigation-link"> Admin Dashboard</a>
+     </li>
+    <div class="menu-header">
+      <span ><i class="fa fa-hourglass-half" ></i> All Documents </span>
+    </div>
+     <li class="navigation-item">
+      <a [routerLink]="['/pendingAdmin']"  class="navigation-link"> All Documents</a>
+     </li>
+    <div class="menu-header">
+      <span> <i class="fa fa-file-pdf-o" ></i> Approved </span>
+    </div>
+   
+    <li class="navigation-item ">
+      <a [routerLink]="['/approvedAdmin']"  class="navigation-link"> Approved Documents</a>
+     </li>
+     
+     <div class="menu-header">
+      <span><i class="fa fa-times"></i> Rejected </span>
+    </div>
+        <li class="navigation-item">
+      <a [routerLink]="['/rejectedAdmin']" class="navigation-link"> Rejected Documents </a>
+     </li>
+       
+   
+  </ul>
+ <div class="logout mb-5" >
+    <a (click)="logout()" class="navigation-link"><span >
+    <i class="fa fa-sign-out" ></i> Logout</span>
+    </a>
+ </div>
+ 
+ 
+</nav>

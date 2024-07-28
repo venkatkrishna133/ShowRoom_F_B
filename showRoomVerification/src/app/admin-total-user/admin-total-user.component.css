@@ -1,0 +1,189 @@
+
+body {
+    background-color: #1b2431;
+    color: #202020;
+    font-family: "Montserrat", "Helvetica", "Open Sans", "Arial";
+    font-size: 13px;
+}
+ 
+a:hover {
+    text-decoration: none;
+}
+ 
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+ 
+i{
+    margin-left: 85%;
+}
+ 
+.navigation-search {
+    position: relative;
+    text-align: center;  
+    padding: 13px 0 13px 0;
+  }
+ 
+  .navigation-search-input {
+   
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 10rem;
+    padding-left: 1rem;
+    background-color: #111;
+    border: 1px solid #555;
+    font-size: .8rem;
+    color: #fff;
+    letter-spacing: .05rem;
+    transition: background-color .3s;
+  }
+ 
+  .navigation-search-input:focus {
+    background-color: #222;
+    outline: 1px solid #24788F;
+  }
+ 
+ 
+  .navigation-search-btn {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    top: 1.3rem;
+    right: 22rem;
+  }
+ 
+  .navigation-search-input:focus + .navigation-search-btn {
+    color: #24788F;
+  }
+ 
+ 
+/* Projects */
+.projects {
+    background-color: #273142;
+    border: 1px solid #738297;
+    margin-left: 7%;
+    width: 100%;    
+}
+ 
+.projects-inner {
+    border-radius: 4px;
+}
+ 
+.projects-header {
+    color: white;
+    padding: 10px;
+}
+ 
+.projects-header .count,
+.projects-header .title {
+    display: inline-block;
+}
+ 
+.projects-header .count {
+    color: #738297;
+}
+ 
+.projects-header .zmdi {
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    margin: 5px 0;
+}
+ 
+.projects-header .title {
+    font-size: 21px;
+}
+ 
+.projects-header .title + .count {
+    margin-left: 5px;
+}
+ 
+.projects-table {
+    background: #273142;
+    width: 100%;
+}
+ 
+.projects-table td,
+.projects-table th {
+    color: white;
+    padding: 10px 22px;
+    vertical-align: middle;
+}
+ 
+.projects-table td p {
+    font-size: 12px;
+}
+ 
+.projects-table td p:last-of-type {
+    color: #738297;
+    font-size: 11px;
+}
+ 
+.projects-table th {
+    background-color: #313D4F;
+}
+ 
+.projects-table tr:hover {
+    background-color:  #273142;
+}
+ 
+.projects-table tr:not(:last-of-type) {
+    border-bottom: 1px solid #313D4F;
+}
+ 
+.projects-table .member figure,
+.projects-table .member .member-info {
+    display: inline-block;
+    vertical-align: top;
+}
+ 
+.projects-table .member figure + .member-info {
+    margin-left: 7px;
+}
+ 
+.projects-table .member img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+ 
+.projects-table .status > form {
+    float: right;
+}
+ 
+.projects-table .status-text {
+    display: inline-block;
+    font-size: 12px;
+    margin: 11px 0;
+    padding-left: 20px;
+    position: relative;
+}
+ 
+.projects-table .status-text:before {
+    border: 3px solid;
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 14px;
+}
+ 
+.projects-table .status-blue:before {
+    border-color: #1C93ED;
+}
+ 
+.projects-table .status-orange:before {
+    border-color: #DA932C;
+}
+ 
+.projects-table .status-red:before {
+    border-color: #D65B4A;
+}
+ 
+ 

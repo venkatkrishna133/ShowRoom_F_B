@@ -1,0 +1,53 @@
+
+head-image{
+   
+    display: flex;
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img{
+   max-width: 100px;
+    max-height: 100px;
+    margin: 10px 0px 0px 50%;
+   
+}
+
+ 
+
+
+.header{
+    display: flex;
+    position: fixed;
+    margin: 20px 0px 0px 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 870px) {
+  .header {
+    margin: 10px 0px 0px 40%; /* Adjust margin for centering */
+  }
+}
+
+
+
+@media (max-width: 570px) {
+  .header {
+    margin: 10px 0px 0px 30%; /* Adjust margin for centering */
+  }
+}
+
+.menu-header {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  transition: opacity 0.3s;
+  opacity: 0.5;
+  color: #fff;
+  position: relative;
+  text-align: right;
+ 
+}
